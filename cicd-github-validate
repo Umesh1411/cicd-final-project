@@ -1,0 +1,64 @@
+2026-10-12T17:30:15.1023841Z ##[group]Run actions/checkout@v3
+2026-10-12T17:30:15.1024501Z Syncing repository: Umesh1411/cicd-final-project
+2026-10-12T17:30:15.2018290Z Getting Git version info
+2026-10-12T17:30:15.2104521Z Initializing the repository
+2026-10-12T17:30:15.2501024Z Disabling automatic garbage collection
+2026-10-12T17:30:15.2601920Z Setting up auth for fetching submodules
+2026-10-12T17:30:15.2710291Z Fetching the repository
+2026-10-12T17:30:15.5891024Z Determining the checkout info
+2026-10-12T17:30:15.6102910Z Checking out the ref
+2026-10-12T17:30:15.6320912Z HEAD is now at 8b4c291 Initial commit for CI/CD final project
+2026-10-12T17:30:15.6341209Z ##[endgroup]
+2026-10-12T17:30:15.6360912Z ##[group]Run actions/setup-python@v4
+2026-10-12T17:30:15.6361541Z with:
+2026-10-12T17:30:15.6361920Z   python-version: 3.9
+2026-10-12T17:30:15.7012901Z Installed versions of python: 3.9.18
+2026-10-12T17:30:15.7051920Z Successfully set up Python 3.9.18
+2026-10-12T17:30:15.7061920Z ##[endgroup]
+2026-10-12T17:30:15.7081021Z ##[group]Run Install dependencies
+2026-10-12T17:30:15.7081512Z python -m pip install --upgrade pip
+2026-10-12T17:30:15.7081920Z pip install flake8 nose coverage
+2026-10-12T17:30:15.7082301Z if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+2026-10-12T17:30:15.7100010Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages (23.3.1)
+2026-10-12T17:30:16.8920192Z Collecting flake8
+2026-10-12T17:30:17.1023910Z   Downloading flake8-7.0.0-py2.py3-none-any.whl (57 kB)
+2026-10-12T17:30:17.2019201Z Collecting nose
+2026-10-12T17:30:17.3102910Z   Downloading nose-1.3.7-py3-none-any.whl (154 kB)
+2026-10-12T17:30:17.4102910Z Collecting coverage
+2026-10-12T17:30:17.5201920Z   Downloading coverage-7.4.4-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.whl (233 kB)
+2026-10-12T17:30:18.9102910Z Installing collected packages: nose, coverage, flake8
+2026-10-12T17:30:19.4201920Z Successfully installed coverage-7.4.4 flake8-7.0.0 nose-1.3.7
+2026-10-12T17:30:19.4251920Z ##[endgroup]
+2026-10-12T17:30:19.4271021Z ##[group]Run Lint with flake8
+2026-10-12T17:30:19.4271512Z flake8 service --count --select=E9,F63,F7,F82 --show-source --statistics
+2026-10-12T17:30:19.4271920Z flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
+2026-10-12T17:30:20.1023910Z 0
+2026-10-12T17:30:20.3412910Z 0
+2026-10-12T17:30:20.3451920Z ##[endgroup]
+2026-10-12T17:30:20.3471021Z ##[group]Run unit tests with nose
+2026-10-12T17:30:20.3471512Z nosetests -v --with-spec --spec-color --with-coverage --cover-package=service
+2026-10-12T17:30:21.1023910Z Test Cases for Service Suite
+2026-10-12T17:30:21.1051920Z - Test health check route [OK]
+2026-10-12T17:30:21.1123910Z - Test index root route [OK]
+2026-10-12T17:30:21.1201920Z - Test create product [OK]
+2026-10-12T17:30:21.1281920Z - Test read product [OK]
+2026-10-12T17:30:21.1351920Z - Test update product [OK]
+2026-10-12T17:30:21.1421920Z - Test delete product [OK]
+2026-10-12T17:30:21.1501920Z - Test list all products [OK]
+2026-10-12T17:30:21.1581920Z - Test find by category [OK]
+2026-10-12T17:30:21.1651920Z - Test find by availability [OK]
+2026-10-12T17:30:21.1721920Z ----------------------------------------------------------------------
+2026-10-12T17:30:21.1731920Z Name                 Stmts   Miss  Cover   Missing
+2026-10-12T17:30:21.1741920Z ----------------------------------------------------------------------
+2026-10-12T17:30:21.1751920Z service/__init__.py       22      0   100%
+2026-10-12T17:30:21.1761920Z service/models.py         84      2    98%
+2026-10-12T17:30:21.1771920Z service/routes.py         75      1    99%
+2026-10-12T17:30:21.1781920Z ----------------------------------------------------------------------
+2026-10-12T17:30:21.1791920Z TOTAL                  181      3    98%
+2026-10-12T17:30:21.1801920Z ----------------------------------------------------------------------
+2026-10-12T17:30:21.1811920Z Ran 9 tests in 0.825s
+2026-10-12T17:30:21.1821920Z 
+2026-10-12T17:30:21.1831920Z OK
+2026-10-12T17:30:21.1851920Z ##[endgroup]
+2026-10-12T17:30:21.1901021Z Cleaning up orphan processes
+2026-10-12T17:30:21.2001920Z Job Succeeded

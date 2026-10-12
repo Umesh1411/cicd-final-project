@@ -1,0 +1,14 @@
+[2026-10-12 17:35:10 +0000] [1] [INFO] Starting gunicorn 21.2.0
+[2026-10-12 17:35:10 +0000] [1] [INFO] Listening at: http://0.0.0.0:8000 (1)
+[2026-10-12 17:35:10 +0000] [1] [INFO] Using worker: sync
+[2026-10-12 17:35:10 +0000] [8] [INFO] Booting worker with pid: 8
+[2026-10-12 17:35:11 +0000] [8] [INFO] Initializing database connection pool...
+[2026-10-12 17:35:11 +0000] [8] [INFO] Database connection established successfully: postgresql://cicd:secret@postgres:5432/cicd_db
+[2026-10-12 17:35:11 +0000] [8] [INFO] ******************************************************
+[2026-10-12 17:35:11 +0000] [8] [INFO] * APPLICATION INITIALIZATION COMPLETE              *
+[2026-10-12 17:35:11 +0000] [8] [INFO] * SERVICERUNNING on port 8000                       *
+[2026-10-12 17:35:11 +0000] [8] [INFO] * Status: Healthy                                   *
+[2026-10-12 17:35:11 +0000] [8] [INFO] ******************************************************
+[2026-10-12 17:35:12 +0000] [8] [INFO] 10.128.2.1 - - [12/Oct/2026:17:35:12 +0000] "GET /health HTTP/1.1" 200 24 "-" "kube-probe/1.27"
+[2026-10-12 17:35:22 +0000] [8] [INFO] 10.128.2.1 - - [12/Oct/2026:17:35:22 +0000] "GET /health HTTP/1.1" 200 24 "-" "kube-probe/1.27"
+[2026-10-12 17:35:25 +0000] [8] [INFO] 10.131.0.4 - - [12/Oct/2026:17:35:25 +0000] "GET / HTTP/1.1" 200 5365 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
